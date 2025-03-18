@@ -1,7 +1,16 @@
 <mvc:View controllerName="nguyetfiori.controller.Home"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
-    xmlns="sap.m">
+    xmlns="sap.m"
+    xmlns:smartTable="sap.ui.comp.smarttable"
+    >
     <Page id="page" title="{i18n>title}">
-        <content />
+        <content>
+            <smartTable:SmartTable id="smartTable" entitySet="EmployeeSet" tableType="ResponsiveTable" 
+                useVariantManagement="false" useExportToExcel="false" header="Products" showRowCount="true" 
+                persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true" smartFilterId="smartFilterBar" 
+                initiallyVisibleFields="Id,Depart,Name,Address,Phonenum,Pos,Salary,Revenue" >
+
+            </smartTable:SmartTable>
+        </content>
     </Page>
 </mvc:View>
