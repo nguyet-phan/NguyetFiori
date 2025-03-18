@@ -8,8 +8,19 @@
             <smartTable:SmartTable id="smartTable" entitySet="EmployeeSet" tableType="ResponsiveTable" 
                 useVariantManagement="false" useExportToExcel="false" header="Products" showRowCount="true" 
                 persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true" smartFilterId="smartFilterBar" 
-                initiallyVisibleFields="Id,Depart,Name,Address,Phonenum,Pos,Salary,Revenue" >
+                initiallyVisibleFields="Id,Depart,Name,Address,Phonenum,Pos" >
+                <Table id="idTable" mode="MultiSelect">
+                    <headerToolbar>
+                    <OverflowToolbar>
+                        <ToolbarSpacer />
+                            <Button text="Create" press="onCreate" type="Emphasized"/>
+                            <Button text="Update" press="onUpdate" type="Emphasized"/>
+                            <Button class="sapUiSmallMarginBeginEnd" type="Reject" icon="sap-icon://delete" 
+                            text="Delete" press="onDelete"/>
 
+                    </OverflowToolbar>
+                </headerToolbar>
+                </Table>
             </smartTable:SmartTable>
         </content>
     </Page>
