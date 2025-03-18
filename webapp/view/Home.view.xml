@@ -2,13 +2,23 @@
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m"
     xmlns:smartTable="sap.ui.comp.smarttable"
+    xmlns:smartfilterbar="sap.ui.comp.smartfilterbar"
     >
     <Page id="page" title="{i18n>title}">
         <content>
+        <smartfilterbar:SmartFilterBar id="smartFilterBar" entitySet="EmployeeSet" persistencyKey="SmartFilter_Explored">
+            <smartfilterbar:controlConfiguration>
+                <smartfilterbar:ControlConfiguration key="Id" visibleInAdvancedArea="true"/>
+                <smartfilterbar:ControlConfiguration key="Depart" visibleInAdvancedArea="true"/>
+                <smartfilterbar:ControlConfiguration key="Name" visibleInAdvancedArea="true"/>
+            </smartfilterbar:controlConfiguration>
+        </smartfilterbar:SmartFilterBar>
+
             <smartTable:SmartTable id="smartTable" entitySet="EmployeeSet" tableType="ResponsiveTable" 
                 useVariantManagement="false" useExportToExcel="false" header="Products" showRowCount="true" 
-                persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true" smartFilterId="smartFilterBar" 
-                initiallyVisibleFields="Id,Depart,Name,Address,Phonenum,Pos" >
+                persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true"  
+                initiallyVisibleFields="Id,Depart,Name,Address,Phonenum,Pos" 
+                smartFilterId="smartFilterBar">
                 <Table id="idTable" mode="MultiSelect">
                     <headerToolbar>
                     <OverflowToolbar>
